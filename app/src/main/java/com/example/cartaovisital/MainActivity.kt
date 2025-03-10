@@ -1,5 +1,9 @@
 package com.example.cartaovisital
 
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -19,7 +23,20 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.cartaovisital.ui.theme.CartaovisitalTheme
 
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContent {
+            CartaovisitalTheme {
+                // Chama o Composable da tela do Cartão de Visita
+                BusinessCardScreen()
+            }
+        }
+    }
+}
 @Composable
 fun BusinessCardScreen() {
     val backgroundColor = Color(0xFFD8EECF) // Cor de fundo semelhante à da imagem
@@ -42,7 +59,7 @@ fun BusinessCardScreen() {
             )
             // Nome e cargo
             Text(
-                text = "Jennifer Doe",
+                text = "Jose Doao",
                 fontSize = 24.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.Black
@@ -55,9 +72,9 @@ fun BusinessCardScreen() {
             )
             Spacer(modifier = Modifier.height(16.dp))
             // Informações de contato
-            ContactInfo(icon = Icons.Default.Phone, text = "+11 (123) 444 555 666")
+            ContactInfo(icon = Icons.Default.Phone, text = "+66 (112) 800 289 221")
             ContactInfo(icon = Icons.Default.Share, text = "@AndroidDev")
-            ContactInfo(icon = Icons.Default.Email, text = "jen.doe@android.com")
+            ContactInfo(icon = Icons.Default.Email, text = "jose.doao@android.com")
         }
     }
 }
