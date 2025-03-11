@@ -32,13 +32,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             CartaovisitalTheme {
                 // Chama o Composable da tela do Cartão de Visita
-                BusinessCardScreen()
+                Cartalvisitao()
             }
         }
     }
 }
 @Composable
-fun BusinessCardScreen() {
+fun Cartalvisitao() {
     val backgroundColor = Color(0xFFD8EECF) // Cor de fundo semelhante à da imagem
 
     Box(
